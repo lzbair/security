@@ -1,0 +1,7 @@
+#!/bin/bash
+clear
+
+echo "Request for CA"
+export OPENSSL_CONF=./request.cnf
+openssl req -newkey rsa:2048 -keyout basekey.pem -keyform PEM -out basereq.pem -outform PEM
+

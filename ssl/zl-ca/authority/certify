@@ -1,0 +1,13 @@
+#!/bin/bash
+clear
+
+ 
+
+echo "Sign requested certificate"
+export OPENSSL_CONF=./caconfig.cnf 
+openssl ca -in ../applicant/basereq.pem -out your-cert.pem
+
+
+echo "Check ./authority/signedcerts directory"
+
+
