@@ -1,0 +1,6 @@
+#!/bin/bash
+clear
+
+openssl ca -config caconfig.cnf -revoke signedcerts/$1
+openssl ca -gencrl -config  caconfig.cnf -out revoked/crl.pem
+echo "./signedcerts/$1 revoked, Reason: $2"
